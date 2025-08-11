@@ -1,0 +1,20 @@
+
+.task-list-container {
+  margin: 2rem;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+li.completed {
+  text-decoration: line-through;
+  color: #888;
+}
