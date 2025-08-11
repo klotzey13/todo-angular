@@ -1,9 +1,27 @@
 
 <div class="task-list-container">
-  <h1>Tasks</h1>
-  <ul>
-    <li *ngFor="let task of tasks" [class.completed]="task.completed">
-      <span>{{ task.description }}</span>
-    </li>
-  </ul>
+  <mat-card>
+    <mat-card-title>Tasks</mat-card-title>
+    <mat-card-content>
+      <div *ngIf="tasks.length === 0">No tasks found.</div>
+      <mat-card *ngFor="let task of tasks" class="task-card" [class.completed]="task.completed">
+        <mat-card-content>
+          <p>{{ task.description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-icon-button color="primary" *ngIf="!task.completed">
+            <mat-icon>check_circle</mat-icon>
+          </button>
+          <button mat-icon-button color="warn">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="openAddTaskDialog()">
+        <mat-icon>add</mat-icon> Add Task
+      </button>
+    </mat-card-actions>
+  </mat-card>
 </div>

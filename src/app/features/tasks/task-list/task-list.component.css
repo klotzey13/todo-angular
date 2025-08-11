@@ -1,20 +1,32 @@
 
 .task-list-container {
-  margin: 2rem;
-  font-family: sans-serif;
+  /* Removed margin as it's handled by global styles now */
+  /* Removed font-family as it's handled by global styles now */
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.task-card {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-li {
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #ccc;
+.task-card mat-card-content {
+  flex-grow: 1;
+  padding-right: 16px; /* Space between text and buttons */
 }
 
-li.completed {
+.task-card.completed mat-card-content p {
   text-decoration: line-through;
   color: #888;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  padding: 16px;
+}
+
+mat-card-actions button {
+  margin-left: 8px; /* Space between buttons */
 }
