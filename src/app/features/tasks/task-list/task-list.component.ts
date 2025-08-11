@@ -1,8 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Task } from '../task.dto';
-import { TaskService } from '../task.service';
+import { Task } from '../../../core/models/task.dto';
+import { TaskService } from '../../../core/services/task.service';
 
 @Component({
   selector: 'app-task-list',
