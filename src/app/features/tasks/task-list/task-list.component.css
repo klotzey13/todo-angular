@@ -1,32 +1,69 @@
 
 .task-list-container {
-  /* Removed margin as it's handled by global styles now */
-  /* Removed font-family as it's handled by global styles now */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .task-card {
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin: 16px 0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .task-card mat-card-content {
+  padding: 16px;
   flex-grow: 1;
-  padding-right: 16px; /* Space between text and buttons */
+}
+
+.task-card.completed {
+  background-color: #f8f9fa;
 }
 
 .task-card.completed mat-card-content p {
   text-decoration: line-through;
-  color: #888;
+  color: #6c757d;
+}
+
+mat-card-content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #212529;
 }
 
 mat-card-actions {
   display: flex;
-  justify-content: flex-end; /* Align buttons to the right */
-  padding: 16px;
+  justify-content: flex-end;
+  padding: 8px 16px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
 }
 
 mat-card-actions button {
-  margin-left: 8px; /* Space between buttons */
+  margin-left: 8px;
+}
+
+.mat-mdc-card-title {
+  padding: 24px 24px 0;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  color: #212529;
+}
+
+:host ::ng-deep .mat-mdc-card {
+  --mdc-elevated-card-container-color: transparent;
 }
