@@ -9,7 +9,7 @@ import { Task } from '../models/task.dto';
 })
 export class TaskService {
 
-  private apiUrl = 'http://127.0.0.1:8000';
+  private apiUrl = '/api';
 
   constructor(private http: HttpClient) { }
 
